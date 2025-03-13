@@ -94,19 +94,19 @@ def get_lucky_numbers():
     """
     Returns a set of 6 lucky numbers
     """
-    return random.sample((1, 99), 6)
+    return random.sample(range(1, 99), 6)
     
 def get_daily_fortune():
     """
     Returns the same fortune for everyone on a given day
     """
-    /TODO
+    #TODO
     
 def get_custom_fortune(name):
     """
     Returns a personalized fortune
     """
-    return f"{name}", {random.choice(FORTUNES)}
+    return f"{name}, {random.choice(FORTUNES)}"
 
 def get_themed_fortune(theme):
     """
