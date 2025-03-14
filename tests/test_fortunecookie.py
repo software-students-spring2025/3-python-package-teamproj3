@@ -9,6 +9,23 @@ from fortunecookiepkg.fortunecookie import (
 )
 
 class Tests:
+    #Fixtures
+    @pytest.fixture
+    def example_fixture(self):
+        """
+        An example fixture used for setup/teardown before/after tests are run.
+        """
+        yield
+
+    #Test functions
+    def test_sanity_check(self, example_fixture):
+        """
+        Test debugging is working with a simple check.
+        """
+        expected = True
+        actual = True
+        assert actual==expected, "Expected True to equal True."
+    
     '''
     If valid input, array should be the length of given input
     '''
