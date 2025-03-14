@@ -100,7 +100,9 @@ def get_daily_fortune():
     """
     Returns the same fortune for everyone on a given day
     """
-    #TODO
+    day = datetime.date.today().timetuple().tm_yday
+    index = day%len(FORTUNES)
+    return FORTUNES[index]
     
 def get_custom_fortune(name):
     """
