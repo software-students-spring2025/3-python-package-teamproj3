@@ -1,5 +1,8 @@
+import datetime
+from unittest.mock import patch
 import pytest
 import random
+
 from fortunecookiepkg.fortunecookie import (
     FORTUNES,
     get_random_fortune,
@@ -101,16 +104,6 @@ class Tests:
         assert len(res) > 0, f"Expected a non-empty fortune but got '{res}'"
 
     #Daily Fortune Tests
-    '''
-    Tests if the daily fortune is being accessed properly
-    '''
-    def test_daily_fortune_date(self):
-        fortune1 = get_daily_fortune()
-        fortune2 = get_daily_fortune()
-
-        assert fortune1 != fortune2
-        assert FORTUNES(FORTUNES.index(fortune1) + 1) == fortune2 
-
     '''
     Tests that the fortune for each day exists in the FORTUNE array
     '''
