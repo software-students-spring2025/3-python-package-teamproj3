@@ -121,7 +121,7 @@ class Tests:
     '''
     Tests that the fortune for each day remains consistent
     '''
-    def test_daily_fortune_accurate(self):
+    def test_daily_fortune_is_accurate(self):
         fortune1 = get_daily_fortune()
         fortune2 = get_daily_fortune()
         assert (fortune1 == fortune2)
