@@ -86,7 +86,7 @@ THEMED_FORTUNES = {
 
 def get_random_fortune():
     """
-    Returns a random fortune from th elist
+    Returns a random fortune from the list
     """
     return random.choice(FORTUNES)
 
@@ -112,11 +112,16 @@ def get_custom_fortune(name):
     """
     Returns a personalized fortune
     """
+    if not name.strip():
+        return random.choice(FORTUNES)
     return f"{name}, {random.choice(FORTUNES)}"
 
 def get_themed_fortune(theme):
     """
     Returns a fortune based on a specific theme
     """
-    return random.choice(THEMED_FORTUNES.get(theme.lower(), ["There are no fortunes for your provided theme, please choose 'love', 'career', or 'happieness'"]))
+    themes = theme.strip().lower
+    if not themes:
+        return "There are no fortunes for your provided theme, please choose 'love', 'career', or 'happiness'."
+    return random.choice(THEMED_FORTUNES.get(theme.strip().lower(), ["There are no fortunes for your provided theme, please choose 'love', 'career', or 'happiness'"]))
 
