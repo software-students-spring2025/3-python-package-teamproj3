@@ -13,7 +13,7 @@ def main():
     """
     parser = argparse.ArgumentParser(description="Get your fortune!")
     parser.add_argument("--random", action="store_true", help="Get a random fortune.")
-    parser.add_argument("--numbers", metavar="LEN", help="Get your lucky number(s). Choose a number between 1-10 (inclusive).")
+    parser.add_argument("--numbers", metavar="LEN", help="Get your lucky number(s). Choose how many numbers you want from 1-10 (inclusive).")
     parser.add_argument("--daily", action="store_true", help="Get today's fortune.")
     parser.add_argument("--custom", metavar="NAME", help="Get a personalized fortune.")
     parser.add_argument("--themed", metavar="THEME", help="Get a themed fortune. The themes are love, career, and happiness.")
