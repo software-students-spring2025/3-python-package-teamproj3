@@ -90,11 +90,15 @@ def get_random_fortune():
     """
     return random.choice(FORTUNES)
 
-def get_lucky_numbers():
+def get_lucky_numbers(len):
     """
-    Returns a set of 6 lucky numbers
+    Returns a set of len lucky numbers
     """
-    return random.sample(range(1, 99), 6)
+    len_num = int(len)
+    if 1 <= len_num <= 10:
+        return random.sample(range(1, 99), len_num)
+    else:
+        return([]);
     
 def get_daily_fortune():
     """
