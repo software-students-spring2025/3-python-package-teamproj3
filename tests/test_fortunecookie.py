@@ -1,6 +1,7 @@
 import pytest
 import random
 from fortunecookiepkg.fortunecookie import (
+    FORTUNES,
     get_random_fortune,
     get_lucky_numbers,
     get_daily_fortune,
@@ -99,4 +100,35 @@ class Tests:
         assert isinstance(res, str), "Expected output to be a string"
         assert len(res) > 0, f"Expected a non-empty fortune but got '{res}'"
 
-    
+    #Daily Fortune Tests
+    '''
+    Tests if the daily fortune is being accessed properly
+    '''
+    def test_daily_fortune_date(self):
+        fortune1 = get_daily_fortune()
+        fortune2 = get_daily_fortune()
+
+        assert fortune1 != fortune2
+        assert FORTUNES(FORTUNES.index(fortune1) + 1) == fortune2 
+
+    '''
+    Tests that the fortune for each day exists in the FORTUNE array
+    '''
+    def test_daily_fortune_exists(self):
+        fortune = get_daily_fortune()
+        assert fortune in FORTUNES
+
+    '''
+    Tests that the fortune for each day remains consistent
+    '''
+    def test_daily_fortune_accurate(self):
+        fortune1 = get_daily_fortune()
+        fortune2 = get_daily_fortune()
+        assert (fortune1 == fortune2)
+
+    '''
+    Tests that the daily fortune function returns a string
+    '''
+    def test_daily_fortune_returns_string(self):
+        fortune = get_daily_fortune()
+        assert isinstance(fortune, str)
