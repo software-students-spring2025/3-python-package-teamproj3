@@ -7,7 +7,10 @@ name = "fortunecookiepkg"
 description = "A package that shares fortunes, lucky numbers, and themed or personalized messages."
 version = "0.1.1"
 authors = [
-  { name="Emily Ney", email="emn8280@nyu.edu" }
+  { name="Emily Ney", email="emn8280@nyu.edu" },
+  { name="Nikita Bhaskar", email="nb3460@nyu.edu" },
+  { name="Ariya Mathrawala", email="aam9811@nyu.edu" },
+  { name="Oluwapelumi Adesiyan", email="oea9714@nyu.edu" }
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
