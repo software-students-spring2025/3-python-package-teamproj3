@@ -84,6 +84,9 @@ THEMED_FORTUNES = {
         "Appreciate. Appreciate. Appreciate."]
 }
 
+#Days of the week
+week_days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+
 def get_random_fortune():
     """
     Returns a random fortune from the list
@@ -100,13 +103,17 @@ def get_lucky_numbers(len):
     else:
         return([]);
     
-def get_daily_fortune():
+def get_daily_fortune(day):
     """
-    Returns the same fortune for everyone on a given day
+    Returns the same fortune for everyone given a certain day of the week
     """
-    day = datetime.date.today().timetuple().tm_yday
-    index = day%len(FORTUNES)
-    return FORTUNES[index]
+    if day.lower() in week_days:  
+        day_num = week_days.index(day.lower()) + 1  
+        today = datetime.date.today().timetuple().tm_yday
+        index = int((today%len(FORTUNES)) / day_num)
+        return FORTUNES[index]
+    else:
+        return('');
     
 def get_custom_fortune(name):
     """
