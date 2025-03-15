@@ -105,23 +105,31 @@ class Tests:
 
     #Daily Fortune Tests
     '''
-    Tests that the fortune for each day exists in the FORTUNE array
+    Tests that the fortune for a given day exists in the FORTUNE array
     '''
     def test_daily_fortune_exists(self):
-        fortune = get_daily_fortune()
+        fortune = get_daily_fortune('wednesday')
         assert fortune in FORTUNES
 
     '''
-    Tests that the fortune for each day remains consistent
+    Tests that the fortune for a given day of the week remains consistent given different cases
     '''
     def test_daily_fortune_is_accurate(self):
-        fortune1 = get_daily_fortune()
-        fortune2 = get_daily_fortune()
+        fortune1 = get_daily_fortune('monday')
+        fortune2 = get_daily_fortune('Monday')
         assert (fortune1 == fortune2)
 
     '''
-    Tests that the daily fortune function returns a string
+    Tests that the daily fortune function returns a non-empty string, given a valid day of the week
     '''
     def test_daily_fortune_returns_string(self):
-        fortune = get_daily_fortune()
-        assert isinstance(fortune, str)
+        fortune = get_daily_fortune('tuesday')
+        assert len(fortune) != 0, f"Expected get_daily_fortune() to return a non-empty string of length > 0. Instead, it returned a string with length {len(fortune)}"
+
+    '''
+    Tests that the daily fortune function returns an empty string, given an invalid day of the week
+    '''
+    def test_daily_fortune_returns_string(self):
+        fortune = get_daily_fortune('invalid_day')
+        assert len(fortune) == 0, f"Expected get_daily_fortune() to return string of length 0. Instead, it returned a string with length {len(fortune)}"
+        
