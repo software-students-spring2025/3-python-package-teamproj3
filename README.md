@@ -48,36 +48,36 @@ Simple example unit tests are included within the tests directory. To run these 
 ### Functions
 
 #### get_random_function()
-Generates a random fortune
-**Parameters:** 
-- _none_
-**Return:** 
+Generates a random fortune <br />
+**Parameters:** <br />
+- _none_ <br />
+**Return:** <br />
 - a Fortune in the form of a str
 
 #### get_lucky_numbers(len)
-Generates a set of lucky numbers.
-**Parameters:** 
-- len (int) \- the amount of lucky numbers to return
-**Return:** 
+Generates a set of lucky numbers. <br />
+**Parameters:** <br />
+- len (int) \- the amount of lucky numbers to return <br />
+**Return:** <br />
 - list (int)s
 
 #### get_daily_fortune(day)
-Generates the same fortune for all users for that day.
-**Parameters:** 
-- day (str) \- the weekday to retrieve a fortune for
-**Return:** 
+Generates the same fortune for all users for that day. <br />
+**Parameters:** <br />
+- day (str) \- the weekday to retrieve a fortune for <br />
+**Return:** <br />
 - fortune (str)
 
 #### get_custom_fortune(name)
 Generates a fortune that mentions your name.
 **Parameters:** 
-- name (str) \- the name to include in the fortune
-**Return:** 
+- name (str) \- the name to include in the fortune <br />
+**Return:** <br />
 - fortune (str)
 
 #### get_themed_fortune(theme)
-Genrates a fortune that relates to the selected theme.
+Genrates a fortune that relates to the selected theme. <br />
 **Parameters:** 
-- theme (str) \- the theme to retrieve a fortune for
-**Return:** 
+- theme (str) \- the theme to retrieve a fortune for <br />
+**Return:** <br />
 - fortune (str)
