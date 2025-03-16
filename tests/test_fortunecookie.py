@@ -82,6 +82,16 @@ class Tests:
         name = "A" * 100
         res = get_custom_fortune(name)
         assert name in res, f"Expected the long name in the output but got '{res}'"
+    
+    """
+    Function corrrectly handles names with special characters in them
+    """
+    def test_get_custom_fortune_special_chars(self):
+
+        name = "@l!c3_42"
+        res = get_custom_fortune(name)
+        assert name in res, f"Expected '{name}' in the output but got '{res}'"
+    
     '''
     Provided theme should be valid
     '''
@@ -132,4 +142,18 @@ class Tests:
     def test_daily_fortune_returns_string(self):
         fortune = get_daily_fortune('invalid_day')
         assert len(fortune) == 0, f"Expected get_daily_fortune() to return string of length 0. Instead, it returned a string with length {len(fortune)}"
-        
+    
+    """
+    Ensure function can handle invalid data types
+    """
+    @pytest.mark.parametrize("invalid_day", [None, 123, [], {}, set(), 5.6])
+    def test_daily_fortune_invalid_types(self, invalid_day):
+        fortune = get_daily_fortune(invalid_day)
+        assert len(fortune) == 0, f"Expected empty string for invalid input but got '{fortune}'"
+    """
+    Ensure function returns a valid fortune for all days of the week
+    """
+    @pytest.mark.parametrize("day", ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
+    def test_daily_fortune_valid_days(self, day):
+        fortune = get_daily_fortune(day)
+        assert isinstance(fortune, str) and len(fortune) > 0, f"Expected a valid fortune but got '{fortune}'"
