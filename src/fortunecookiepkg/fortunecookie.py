@@ -132,6 +132,6 @@ def get_themed_fortune(theme:str):
     """
     themes = theme.strip().lower
     if not themes:
-        return "Invalid Theme. Please choose 'love', 'career', or 'happiness'."
+        return "Invalid theme. Please choose 'love', 'career', or 'happiness'."
     return random.choice(THEMED_FORTUNES.get(theme.strip().lower(), ["There are no fortunes for your provided theme, please choose 'love', 'career', or 'happiness'"]))
 
