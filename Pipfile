@@ -5,9 +5,9 @@ name = "pypi"
 
 [packages]
 build = "*"
-pytest = "*"
 twine = "*"
 fortunecookiepkg = {file = ".", editable = true}
+pytest = "*"
 
 [dev-packages]
 

@@ -93,42 +93,45 @@ def get_random_fortune():
     """
     return random.choice(FORTUNES)
 
-def get_lucky_numbers(len):
+def get_lucky_numbers(length: int):
     """
     Returns a set of len lucky numbers
     """
-    len_num = int(len)
+    len_num = int(length)
     if 1 <= len_num <= 10:
         return random.sample(range(1, 99), len_num)
     else:
-        return([]);
+        return 0
     
-def get_daily_fortune(day):
+def get_daily_fortune(day:str):
     """
-    Returns the same fortune for everyone given a certain day of the week
+    Returns the same fortune for everyone given a certain day of the week.
     """
+    if not isinstance(day, str):
+        return ""
+    
     if day.lower() in week_days:  
         day_num = week_days.index(day.lower()) + 1  
         today = datetime.date.today().timetuple().tm_yday
         index = int((today%len(FORTUNES)) / day_num)
         return FORTUNES[index]
     else:
-        return('');
+        return ""
     
-def get_custom_fortune(name):
+def get_custom_fortune(name:str):
     """
-    Returns a personalized fortune
+    Returns a personalized fortune.
     """
     if not name.strip():
         return random.choice(FORTUNES)
     return f"{name}, {random.choice(FORTUNES)}"
 
-def get_themed_fortune(theme):
+def get_themed_fortune(theme:str):
     """
     Returns a fortune based on a specific theme
     """
     themes = theme.strip().lower
     if not themes:
-        return "There are no fortunes for your provided theme, please choose 'love', 'career', or 'happiness'."
+        return "Invalid Theme. Please choose 'love', 'career', or 'happiness'."
     return random.choice(THEMED_FORTUNES.get(theme.strip().lower(), ["There are no fortunes for your provided theme, please choose 'love', 'career', or 'happiness'"]))
 
