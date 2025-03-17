@@ -17,67 +17,120 @@ An exercise to create a Python package, build it, test it, distribute it, and us
 The Fortune Cookie package is a python package that will bring some joy to your day to day coding! You can can use this package to get a random fortune or find your lucky numbers. 
 
 ## PyPI Package Link
-[View our package on PyPI here] (https://pypi.org)
+[View our package on PyPI here](https://pypi.org)
 
-## Installation and Running
-# Installation
+## Installation
 `pip3 install fortunecookiepkg`
 
-# Running
+## Usage
+Import the package and use the following functions:
+```
+from fortunecookiepackage install import get_random_fortune, get_lucky_numbers, get_daily_fortune, get_custom_fortune, get_themed_fortune
 
+print(get_random_fortune()) 
+#Output: Sell your ideas—they have exceptional merit.
+print(get_lucky_numbers(6))
+#Output: Lucky Numbers: [83, 40, 3, 45, 66, 17]
+print(get_daily_fortune("Monday"))
+#Output: Today's Fortune: Goodness is the only investment that never fails.
+print(get_custom_fortune("Alice"))
+#Output: Alice, A journey of a thousand miles begins with a single step.
+print(get_themed_fortune("Love"))
+#Output: The one you love is closer than you think.
+```
+Or try running the package as a script: 
+```
+python -m fortunecookiepkg --random
+python -m fortunecookiepkg --numbers 6
+python -m fortunecookiepkg --daily monday
+python -m fortunecookiepkg --custom Alice
+python -m fortunecookiepkg --themed Love
+```
 
+## Development Guide
 
-## Testing
-How to run unit tests
-Simple example unit tests are included within the tests directory. To run these tests...
+### Clone the Repository 
+```
+git clone https://github.com/software-students-spring2025/3-python-package-teamproj3.git
+cd 3-python-package-teamproj3
+```
 
-<ol>
-    <li>Install pytest in a virtual environment.</li>
-    <li>Run the tests from the main project directory: `python3 -m pytest`.</li>
-</ol>
+### Set up Virtual Environment
+**Using `pipenv`:**
+```
+pip install pipenv
+pipenv shell
+```
+**Using `venv`:**
+```
+python3 -m venv .venv
+source .venv/bin/activate #On Mac
+.venv\Scripts\activate.bat #On Windows
+```
 
-## Want to Contribute?
-### Setting up the Virtual Environment
+### Run Tests
+Simple example unit tests are included within the tests directory. To run these tests use:
+```
+pytest tests/
+```
 
-### Building
+### Build and Publish Package
+To build the package and upload it to TestPyPI:
+```
+python -m build
+twine upload -r testpypi dist/*
+```
+To publish it to PyPI:
+```
+twine upload dist/*
+```
 
-### Testing
+## Contribute
+To contribute to this project follow these steps: 
+1. Clone the repository
+2. Create a feature branch (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -m "Added new feature"`).
+4. Push to your branch (`git push origin feature-name`).
+5. Open a pull request. 
 
-## Package Contents
+## Function Documentation
 
-### Functions
-
-#### get_random_function()
+### get_random_function()
 Generates a random fortune <br />
 **Parameters:** <br />
-- _none_ <br />
-**Return:** <br />
-- a Fortune in the form of a str
+- _None_
 
-#### get_lucky_numbers(len)
+**Return:** <br />
+- `str`: A randomly selected fortune. 
+---
+### get_lucky_numbers(len)
 Generates a set of lucky numbers. <br />
 **Parameters:** <br />
-- len (int) \- the amount of lucky numbers to return <br />
-**Return:** <br />
-- list (int)s
+- `len` (`int`): The number of lucky numbers to return 
 
-#### get_daily_fortune(day)
+**Return:** <br />
+- `list[int]`: A list of lucky numbers. 
+---
+### get_daily_fortune(day)
 Generates the same fortune for all users for that day. <br />
 **Parameters:** <br />
-- day (str) \- the weekday to retrieve a fortune for <br />
-**Return:** <br />
-- fortune (str)
+- `day` (`str`): The weekday for which to retrieve a fortune. 
 
-#### get_custom_fortune(name)
-Generates a fortune that mentions your name.
+**Return:** <br />
+- `str`: The fortune for the given day.
+---
+### get_custom_fortune(name)
+Generates a fortune that includes the user's name. <br />
 **Parameters:** 
-- name (str) \- the name to include in the fortune <br />
-**Return:** <br />
-- fortune (str)
+- `name` (`str`): The name to include in the fortune. 
 
-#### get_themed_fortune(theme)
+**Return:** <br />
+- `str`: A personalized fortune
+---
+### get_themed_fortune(theme)
 Genrates a fortune that relates to the selected theme. <br />
 **Parameters:** 
-- theme (str) \- the theme to retrieve a fortune for <br />
+- `theme` (`str`): The theme for the fortune (ie. love, career, happiness) 
+
 **Return:** <br />
-- fortune (str)
+- `str`: A themed fortune. 
