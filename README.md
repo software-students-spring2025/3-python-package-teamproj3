@@ -1,9 +1,7 @@
 ![Python build & test](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/event-logger.yml/badge.svg)
 
-![CI/CD](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml/badge.svg)
+![CI](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml/badge.svg)
 # Python Package Exercise
-
-An exercise to create a Python package, build it, test it, distribute it, and use it. See [instructions](./instructions.md) for details.
 
 # Fortune Cookie Python Package
 
@@ -125,7 +123,7 @@ Generates a fortune that includes the user's name. <br />
 - `name` (`str`): The name to include in the fortune. 
 
 **Return:** <br />
-- `str`: A personalized fortune
+- `str`: A personalized fortune.
 ---
 ### get_themed_fortune(theme)
 Genrates a fortune that relates to the selected theme. <br />
