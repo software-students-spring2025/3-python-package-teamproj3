@@ -1,6 +1,8 @@
-![Python build & test](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/event-logger.yml/badge.svg)
-
 ![CI](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml/badge.svg)
+(https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml)
+
+[![CI_test](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml/badge.svg)
+
 
 # Python Package Exercise
 
@@ -52,6 +54,24 @@ python -m fortunecookiepkg --numbers 6
 python -m fortunecookiepkg --daily monday
 python -m fortunecookiepkg --custom Alice
 python -m fortunecookiepkg --themed Love
+```
+## Example Programs
+
+Demo the package by running the Python file found [here](./example.py) or copy and paste the code below!
+
+```
+from fortunecookiepackage import get_random_fortune, get_lucky_numbers, get_daily_fortune, get_custom_fortune, get_themed_fortune
+
+print(get_random_fortune()) 
+#Output: Sell your ideas—they have exceptional merit.
+print(get_lucky_numbers(6))
+#Output: Lucky Numbers: [83, 40, 3, 45, 66, 17]
+print(get_daily_fortune("Monday"))
+#Output: Today's Fortune: Goodness is the only investment that never fails.
+print(get_custom_fortune("Alice"))
+#Output: Alice, A journey of a thousand miles begins with a single step.
+print(get_themed_fortune("Love"))
+#Output: The one you love is closer than you think.
 ```
 
 ## Development Guide
