@@ -1,8 +1,4 @@
-![CI](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml/badge.svg)
-(https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml)
-
-[![CI_test](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml/badge.svg)
-
+![CI](https://github.com/software-students-spring2025/3-python-package-teamproj3/actions/workflows/build.yml/badge.svg?branch=)
 
 # Python Package Exercise
 
@@ -55,7 +51,7 @@ python -m fortunecookiepkg --daily monday
 python -m fortunecookiepkg --custom Alice
 python -m fortunecookiepkg --themed Love
 ```
-## Example Programs
+## Example Program
 
 Demo the package by running the Python file found [here](./example.py) or copy and paste the code below!
 
