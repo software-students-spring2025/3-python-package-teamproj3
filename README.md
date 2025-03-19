@@ -17,7 +17,7 @@ The Fortune Cookie package is a python package that will bring some joy to your 
 
 ## PyPI Package Link
 
-[View our package on PyPI here](https://pypi.org)
+[View our package on PyPI here](https://pypi.org/project/fortunecookiepkg/0.1.6/)
 
 ## Installation
 
